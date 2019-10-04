@@ -2,18 +2,18 @@
 #include<iostream>
 #include<stdio.h>
 using namespace std;
-
-void flood_fill(int x, int y)
+//improve function
+void flood_fill(int x,int y)
 {
-    putpixel(x, y, RED);
-    if (getpixel(x-1, y) == BLACK)
-        flood_fill(x-1, y);
-    if (getpixel(x+1, y) == BLACK)
-        flood_fill(x+1, y);
-    if(getpixel(x, y-1) == BLACK)
-        flood_fill(x, y-1);
-    if(getpixel(x, y+1) == BLACK)
-        flood_fill(x, y+1);
+    if(getpixel(x,y) == BLACK )
+    {
+        putpixel(x,y,RED);
+        flood(x+1,y);
+        flood(x-1,y);
+        flood(x,y+1);
+        flood(x,y-1);
+    }
+    // delay(50);
 }
 int main()
 {

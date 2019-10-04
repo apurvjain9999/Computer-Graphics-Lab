@@ -55,7 +55,7 @@ void midPointCircleDraw(int xc,int yc,int a)
     }
 }
 
-void flood(int x,int y)
+void flood_fill(int x,int y)
 {
     if(getpixel(x,y) == BLACK )
     {
